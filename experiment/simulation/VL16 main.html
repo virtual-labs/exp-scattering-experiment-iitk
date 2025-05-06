@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Scattering Simulation</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .container { position: relative; width: 600px; height: 300px; margin: auto; }
+        .light-source { position: absolute; left: 10px; top: 120px; width: 20px; height: 20px; background: yellow; border-radius: 50%; }
+        .lens { position: absolute; left: 80px; top: 100px; width: 10px; height: 50px; background: lightblue; border-radius: 5px; }
+        .water, .milk { position: absolute; top: 80px; width: 100px; height: 100px; border: 2px solid black; }
+        .water { left: 150px; background: rgba(0, 0, 255, 0.2); }
+        .milk { left: 300px; background: rgba(255, 255, 255, 0.5); position: relative; }
+        .milk-particle { position: absolute; width: 5px; height: 5px; background: white; border-radius: 50%; }
+        canvas { position: absolute; top: 0; left: 0; }
+        .start-button { margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Light Scattering Simulation</h2>
+    <div class="main">
+		<div class="header">
+			<h1>
+				Electronic spectra of conjugated dye and test of free electron model
+			</h1>
+		</div>
+
+     <div class="container">
+        <div class="light-source"></div>
+        <div class="lens"></div>
+        <div class="water"></div>
+        <div class="milk">
+            <div class="milk-particle" style="top: 20px; left: 30px;"></div>
+            <div class="milk-particle" style="top: 50px; left: 70px;"></div>
+            <div class="milk-particle" style="top: 60px; left: 20px;"></div>
+            <div class="milk-particle" style="top: 30px; left: 50px;"></div>
+        </div>
+        <canvas id="canvas" width="600" height="300"></canvas>
+    </div>
+
+    </div>
+    <button class="start-button" onclick="startSimulation()">Start Simulation</button>
+    <a href="Vl20 main.html"><button class="btn btn-primary mb-3" >Back </button></a>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        
+        function drawRay(startX, startY, endX, endY, delay, color, callback) {
+            setTimeout(() => {
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(endX, endY);
+                ctx.stroke();
+                if (callback) callback();
+            }, delay);
+        }
+        
+        function drawLightPath(startY) {
+            let startX = 30;
+            let midX = 90;
+            let waterX = 250;
+            let milkX = 400;
+            let airX = 550;
+            let scatterAngle = (startY - 130) / 5 * 10;
+            
+            drawRay(startX, startY, midX, startY - 10, 0, "orange", () => {
+                drawRay(midX, startY - 10, waterX, startY - 10, 500, "orange", () => {
+                    drawRay(waterX, startY - 10, milkX, startY - 10 + scatterAngle, 500, "orange", () => {
+                        ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
+                        ctx.beginPath();
+                        ctx.arc(milkX, startY - 10 + scatterAngle, 10, 0, Math.PI * 2);
+                        ctx.fill();
+                        drawRay(milkX, startY - 10 + scatterAngle, airX, startY - 10 + scatterAngle * 1.5, 500, "orange", () => {
+                            ctx.fillStyle = "rgba(255, 165, 0, 0.8)";
+                            ctx.beginPath();
+                            ctx.arc(airX, startY - 10 + scatterAngle * 1.5, 10, 0, Math.PI * 2);
+                            ctx.fill();
+                        });
+                    });
+                });
+            });
+        }
+        
+        function startSimulation() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < 5; i++) {
+                drawLightPath(130 + i * 5);
+            }
+        }
+    </script>
+</body>
+</html>
