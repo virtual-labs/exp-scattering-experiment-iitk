@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "How scattering intensity depends on wavelength of incident light?",
+      "answers": {
+        "a": "Independent on wavelength",
+        "b": "Proportional to the 4th power of the wavelength",
+        "c": "Proportional to the 6th power of the wavelength",
+        "d": "Inversely proportional to the 4th power of the wavelength"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If we add more milk in water the scattering will ",
+      "answers": {
+        "a": "Increase",
+        "b": "Decrease ",
+        "c": "Remain same",
+        "d": "Disappear"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The solutions used for studying the scattering of light are known as",
+      "answers": {
+        "a": "Non aqueous solution.",
+        "b": "Colloidal solution.",
+        "c": "Transparent solution.",
+        "d": "Aqueous solution."
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What would happen if pure water was used instead of diluted milk in the experiment?",
+      "answers": {
+        "a": "The beam of light would appear green",
+        "b": "The beam would appear scattered un-evenly",
+        "c": "The beam of light would not be visible",
+        "d": "The beam would change its path"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why is a yellowish-orange beam seen at the far end of the container?",
+      "answers": {
+        "a": "Because shorter wavelengths are scattered, and longer wavelengths remain in the beam.",
+        "b": "Because longer wavelengths are scattered more in the container.",
+        "c": "Because shorter wavelengths are absorbed, leaving only longer wavelengths.",
+        "d": "Because longer wavelength part is refracting more in the container."
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

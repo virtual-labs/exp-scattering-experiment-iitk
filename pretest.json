@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which color scatters more?",
+      "answers": {
+        "a": "Yellow",
+        "b": "Red",
+        "c": "Blue",
+        "d": "Green"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The reason for Tyndall effect is",
+      "answers": {
+        "a": "Scattering of light",
+        "b": "Absorption of light",
+        "c": "Diffraction of light",
+        "d": "Refraction of light"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "For which phenomenon of light, the sky is blue?",
+      "answers": {
+        "a": "Scattering",
+        "b": "Reflection",
+        "c": "Refraction",
+        "d": "Diffraction"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which type of scattering primarily explains why the sky appears blue?",
+      "answers": {
+        "a": "Rayleigh scattering",
+        "b": "Inelastic scattering",
+        "c": "Compton scattering",
+        "d": "Raman scattering"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Among the following, which colour has longest wavelength?",
+      "answers": {
+        "a": "Red",
+        "b": "Blue",
+        "c": "Yellow",
+        "d": "Green"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

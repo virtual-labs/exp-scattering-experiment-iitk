@@ -1,0 +1,455 @@
+body{
+    margin: 0;
+    background-color: white;
+    color: black;
+    overflow: hidden;
+  }
+  
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.2rem;
+  }
+  
+  .header{
+    background-color: aqua;
+    border: 1px solid black;
+    height: 30px;
+  }
+  
+  .header h1{
+    font-family: Helvetica, sans-serif;
+    margin-top: 0;
+    text-align: center;
+   font-size: 2vw;
+  }
+  
+  .simulate{
+    width:77%;
+    height: 37.5rem;
+    border: 1px solid black;
+    position: relative;
+  }
+  #message{
+    margin-left: 1%;
+    flex: 1;
+    background-color:blanchedalmond;
+    text-align: center;
+    border: 1px solid black;
+    width: 12.5rem;
+    height: 37.5rem;
+    position: relative;
+  }
+  #ins{
+    margin: 0;
+    padding: 0;
+    font-size: 3.5vw;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #text{
+    margin: 3;
+    font-size: 1.9vw;
+    font-weight: 90;
+    color: blue;
+  }
+  .simulate #lab{
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    position: absolute;
+  }
+  
+  #work{
+    width:77%;
+    height: 37.5rem;
+    border: 1px solid black;
+    position:absolute;
+    
+  }
+  
+  .pc{
+    position:relative;
+    visibility: visible;
+    margin: 0px;
+    padding: 0px;
+    width: 12.2em;
+    height: 11.5em;
+    transform: translate(6em, 11.2em);
+  }
+  
+  
+  .pc:hover h1{
+    visibility: visible;
+    transition: 0.01s;
+  }
+  
+  .pcimage{
+    height: 11.5em;
+    width: 12.2em;
+    visibility: visible;
+  }
+  
+  .pcimage:hover{
+    height: 11.6em;
+    width: 12.3em;
+  }
+  
+  .hovpc{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    top: 80%;
+  }
+  
+  
+  #spectrometer{
+    position:relative;
+    margin: 0;
+    padding: 0;
+    height: 11.5em;
+    width: 10.2em;
+    visibility: visible;
+    transform: translate(17.5em, 0.01em);
+  }
+  
+  #spectrometer:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  
+  #spectoimg{
+    height: 13em;
+    width: 12.2em;
+    visibility: visible;
+  }
+  
+  #spectoimg:hover{
+    height: 11.6em;
+    width: 10.3em;
+  }
+  
+  #hovspecto{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    top: 70%;
+  }
+  
+  #pippete{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 5.5em;
+    width: 8.2em;
+    visibility: visible;
+    transform: translate(30.5em, -5em);
+  }
+  #pippete:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  
+  .pippeteimg{
+    height: 8.5rem;
+    width: 1rem;
+    visibility: visible;
+    transform: rotate(90deg);
+  }
+  .pippeteimg:hover{
+    height: 8.6rem;
+    width: 1.1rem;
+  }
+  #hovpippete{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -4em);
+  }
+  
+  #conicalflask{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 5.5em;
+    width: 8.2em;
+    visibility: visible;
+    transform: translate(35em, -16em);
+  }
+  #conicalflask:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .flaskimg{
+    height: 8.5rem;
+    width: 3rem;
+    visibility: visible;
+  }
+  .flaskimg:hover{
+    height: 8.6rem;
+    width: 3.1rem;
+  }
+  #hovflask{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -10em);
+  }
+  
+  #cuvette{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 6.5em;
+    width: 4.2em;
+    visibility: visible;
+    transform: translate(28em, -26em);
+  }
+  #cuvette:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .cuvetteimg{
+    height: 14.5rem;
+    width: 14rem;
+    visibility: visible;
+  }
+  .cuvetteimg:hover{
+    height: 3.6rem;
+    width: 3.1rem;
+  }
+  #hovcuvette{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -5em);
+  }
+  
+  #box1{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 5.5em;
+    width: 5.2em;
+    visibility: visible;
+    transform: translate(38.5em, -26em);
+  }
+  #box1:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .box1img{
+    height: 6.5rem;
+    width: 6rem;
+    visibility: visible;
+  }
+  .box1img:hover{
+    height: 6.6rem;
+    width: 6.1rem;
+  }
+  #hovbox1{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -10em);
+  }
+  
+  #box2{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 5.5em;
+    width: 5.2em;
+    visibility: visible;
+    transform: translate(48em, -30.8em);
+  }
+  #box2:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .box2img{
+    height: 7.5rem;
+    width: 7.5rem;
+    visibility: visible;
+  }
+  .box2img:hover{
+    height: 5.6rem;
+    width: 5.1rem;
+  }
+  #hovbox2{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -10em);
+  }
+  
+  #box3{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 5.5em;
+    width: 4.2em;
+    visibility: visible;
+    transform: translate(54em, -36em);
+  }
+  #box3:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .box3img{
+    height: 7.5rem;
+    width: 7.5rem;
+    visibility: visible;
+  }
+  .box3img:hover{
+    height: 4.6rem;
+    width: 4.6rem;
+  }
+  #hovbox3{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -10em);
+  }
+  
+  #box4{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 11.5em;
+    width: 10.2em;
+    visibility: visible;
+    transform: translate(59.5em, -42em);
+  }
+  #box4:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .box4img{
+    height: 7.5rem;
+    width: 7.5rem;
+    visibility: visible;
+  }
+  .box4img:hover{
+    height: 5.6rem;
+    width: 5.6rem;
+  }
+  #hovbox4{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    transform: translate(1.5em, -10em);
+  }
+  
+  
+  #alfoil{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 5.5em;
+    width: 5.2em;
+    visibility: visible;
+    transform: translate(36.5rem, -51rem);
+  }
+  #alfoil:hover h1{
+    visibility: visible;
+    transition: 0.1s;
+  }
+  .alfoilimg{
+    height: 9.5rem;
+    width: 9rem;
+    visibility: visible;
+  }
+  .alfoilimg:hover{
+    height: 5.6rem;
+    width: 5.1rem;
+  }
+  #hovalfoil{
+    position: absolute;
+    font-size: 1.5vw;
+    color: black;
+    background-color: white;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    
+  }
+  
+  #start{
+    position: absolute;
+    border-radius: 30%;
+    font-size: 1vw;
+    left: 90%;
+    top: 90%;
+    border: none;
+    color: white;
+    background-color: green;
+    box-shadow: 2px 2px 0px 1px black;
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1%;
+  }
+  
+  #start a{
+    text-decoration: none;
+    color: white;
+  }
