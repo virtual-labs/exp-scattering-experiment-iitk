@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Scattering Experiment with Torch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section.content {
+            padding: 20px;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        h2 {
+            color: #4682b4;
+        }
+
+        button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin: 10px 5px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #5c6b8c;
+        }
+
+        footer {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            width: 800px;
+            height: 500px;
+        }
+
+        #tableSection {
+            width: 40%;
+            padding: 20px;
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #4682b4;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4682b4;
+            color: white;
+        }
+
+        td {
+            background-color: #f0f8ff;
+        }
+
+        @media (max-width: 768px) {
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+
+            #tableSection {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            table {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Scattering Experiment: Why the Sky is Blue</h1>
+    <p>Understand how Rayleigh scattering changes the color of the sky at different times of the day.</p>
+</header>
+
+<section class="content">
+    <section id="interactive">
+        <h2>Interactive Simulation: Light Scattering</h2>
+        <canvas id="scatteringCanvas" width="800" height="500"></canvas>
+        <button onclick="simulateScattering('clear')">Simulate Clear Water</button>
+        <button onclick="simulateScattering('milk-low')">Simulate Low Milk Mixture</button>
+        <button onclick="simulateScattering('milk-medium')">Simulate Medium Milk Mixture</button>
+        <button onclick="simulateScattering('milk-high')">Simulate High Milk Mixture</button>
+    </section>
+
+    <section id="tableSection">
+        <h2>Data and Analysis:</h2>
+        <table id="dataTable">
+            <tr>
+                <th>SL. No.</th>
+                <th>Wavelength of incident light, λ(nm)</th>
+                <th>Intensity, I(a.u.)*10^6</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td id="wavelength1">-</td>
+                <td id="intensity1">-</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td id="wavelength2">-</td>
+                <td id="intensity2">-</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td id="wavelength3">-</td>
+                <td id="intensity3">-</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td id="wavelength4">-</td>
+                <td id="intensity4">-</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td id="wavelength5">-</td>
+                <td id="intensity5">-</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td id="wavelength6">-</td>
+                <td id="intensity6">-</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td id="wavelength7">-</td>
+                <td id="intensity7">-</td>
+            </tr>
+        </table>
+
+        <h3>Graph of Light Scattering:</h3>
+        <img id="graphImage" src="images\image_6.png" alt="Light Scattering Graph">
+    </section>
+</section>
+
+<script>
+    const canvas = document.getElementById('scatteringCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function updateTable(wavelength, intensity) {
+        for (let i = 1; i <= 7; i++) {
+            document.getElementById(`wavelength${i}`).innerText = wavelength[i-1] || '-';
+            document.getElementById(`intensity${i}`).innerText = intensity[i-1] || '-';
+        }
+    }
+
+    function simulateScattering(type) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Set background
+        ctx.fillStyle = "#ADD8E6";  
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Simulate the effect of light
+        ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.rect(200, 100, 200, 200); 
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#FFD700";  
+        ctx.strokeStyle = "#FFD700";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(150, 300, 15, 0, 2 * Math.PI); 
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(150, 300);
+        ctx.lineTo(300, 100); 
+        ctx.stroke();
+
+        // Adjust the scattering effect based on milk concentration
+        let wavelength = [];
+        let intensity = [];
+
+        if (type === 'clear') {
+            ctx.strokeStyle = "lightblue";
+            wavelength = [450, 480, 500, 520, 530, 540, 550];
+            intensity = [100, 120, 110, 105, 100, 95, 90];
+        } else if (type === 'milk-low') {
+            ctx.strokeStyle = "lightblue";  
+            wavelength = [460, 490, 510, 520, 530, 540, 550];
+            intensity = [120, 130, 120, 115, 110, 105, 100];
+        } else if (type === 'milk-medium') {
+            ctx.strokeStyle = "blue";  
+            wavelength = [470, 500, 520, 530, 540, 550, 560];
+            intensity = [130, 140, 130, 125, 120, 115, 110];
+        } else if (type === 'milk-high') {
+            ctx.strokeStyle = "darkblue"; 
+            wavelength = [480, 510, 530, 540, 550, 560, 570];
+            intensity = [140, 150, 140, 135, 130, 125, 120];
+        }
+
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(150, 300);
+        ctx.lineTo(350, 100); 
+        ctx.stroke();
+
+        // Scatter effect (simulating particles in the air)
+        ctx.fillStyle = "rgba(255, 255, 255, 0.5)"; 
+        for (let i = 0; i < 50; i++) {
+            let x = 200 + Math.random() * 200;
+            let y = 100 + Math.random() * 200;
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
+        ctx.fillStyle = "black";
+        ctx.font = "16px Arial";
+        ctx.fillText("Simulating Rayleigh Scattering Effect with Torchlight", 20, 50);
+        ctx.fillText("Increase milk concentration to see the beam become bluer.", 20, 70);
+
+        // Update the table with corresponding wavelength and intensity
+        updateTable(wavelength, intensity);
+    }
+</script>
+
+</body>
+</html>
